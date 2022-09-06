@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Player {
@@ -30,6 +28,7 @@ public class Player {
             case FIVES -> {return dieFrequency.get(Die.FIVE);}
             case SIXES -> {return dieFrequency.get(Die.SIX);}
         }
+
 
 
         return 15;

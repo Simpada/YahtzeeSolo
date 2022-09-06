@@ -19,7 +19,8 @@ public class YahtzeeTest {
         assertEquals(15, player.getScore(Category.CHANCE));
     }
 
-    @Test void testOnes() {
+    @Test
+    void testOnes() {
 
         var player = new Player(new Die[]{
                 Die.ONE,
@@ -30,6 +31,21 @@ public class YahtzeeTest {
         });
 
         assertEquals(3, player.getScore(Category.ONES));
+
+    }
+
+    @Test
+    void testOtherChance() {
+
+        var player = new Player(new Die[]{
+                Die.ONE,
+                Die.TWO,
+                Die.SIX,
+                Die.SIX,
+                Die.FIVE
+        });
+
+        assertEquals(20, player.getScore(Category.CHANCE));
 
     }
 
