@@ -63,5 +63,18 @@ public class YahtzeeTest {
 
     }
 
+    @Test
+    void testPair() {
+        var player = new Player(new Die[]{
+                Die.ONE,
+                Die.TWO,
+                Die.SIX,
+                Die.SIX,
+                Die.FIVE
+        });
+
+        assertEquals(20, player.getScore(Category.ONEPAIR));
+
+    }
 
 }
