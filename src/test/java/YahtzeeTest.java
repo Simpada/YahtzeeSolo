@@ -16,7 +16,21 @@ public class YahtzeeTest {
         });
 
 
-        assertEquals(15, player.getScore());
+        assertEquals(15, player.getScore(Category.CHANCE));
+    }
+
+    @Test void testOnes() {
+
+        var player = new Player(new Die[]{
+                Die.ONE,
+                Die.TWO,
+                Die.ONE,
+                Die.ONE,
+                Die.FIVE
+        });
+
+        assertEquals(3, player.getScore(Category.ONES));
+
     }
 
 
