@@ -31,7 +31,19 @@ public class YahtzeeTest {
         });
 
         assertEquals(3, player.getScore(Category.ONES));
+    }
+    @Test
+    void testNoOnes() {
 
+        var player = new Player(new Die[]{
+                Die.THREE,
+                Die.TWO,
+                Die.SIX,
+                Die.FIVE,
+                Die.FIVE
+        });
+
+        assertEquals(0, player.getScore(Category.ONES));
     }
     @Test
     void testTwos() {

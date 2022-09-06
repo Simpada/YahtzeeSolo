@@ -13,10 +13,12 @@ public class Player {
 
         Map<Die, Integer> dieFrequency = new HashMap<>();
 
-        for (Die die : dice) {
+        for (Die die : Die.values()) {
             if (!dieFrequency.containsKey(die)) {
                 dieFrequency.put(die, 0);
             }
+        }
+        for (Die die : dice) {
             dieFrequency.put(die, dieFrequency.get(die) + 1);
         }
 
