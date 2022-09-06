@@ -85,7 +85,7 @@ public class YahtzeeTest {
                 Die.FIVE
         });
 
-        assertEquals(20, player.getScore(Category.ONEPAIR));
+        assertEquals(12, player.getScore(Category.ONEPAIR));
 
     }
 
