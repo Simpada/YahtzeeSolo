@@ -13,11 +13,24 @@ public class Player {
 
         Map<Die, Integer> dieFrequency = new HashMap<>();
 
-        for (Die die : dice) {
+        for (Die die : Die.values()) {
             if (!dieFrequency.containsKey(die)) {
                 dieFrequency.put(die, 0);
             }
+        }
+        for (Die die : dice) {
             dieFrequency.put(die, dieFrequency.get(die) + 1);
+        }
+
+        int result = 0;
+
+        if (category == Category.ONEPAIR) {
+            for (Die dieValue : dieFrequency.keySet()) {
+                if (dieFrequency.get(dieValue) >= 2 && result < dieValue.getValue() * 2) {
+                    result = dieValue.getValue() * 2;
+                }
+            }
+            return result;
         }
 
         switch (category) {
@@ -30,7 +43,6 @@ public class Player {
         }
 
         if (category == Category.CHANCE) {
-            int result = 0;
             for(Die die : dice) {
                 result += die.getValue();
             }
