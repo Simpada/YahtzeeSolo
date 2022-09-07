@@ -266,7 +266,7 @@ public class YahtzeeTest {
                 Die.FOUR
         });
 
-        assertEquals(15, player.getScore(Category.LARGESTRAIGHT));
+        assertEquals(20, player.getScore(Category.LARGESTRAIGHT));
 
         player = new Player(new Die[]{
                 Die.FOUR,

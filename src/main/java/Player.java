@@ -72,11 +72,24 @@ public class Player {
                 if (dieFrequency.get(die) != 1 && die.getValue() <= 5) {
                     return 0;
                 }
-                if (dieFrequency.get(die) > 1 && die.getValue() == 6) {
+                if (dieFrequency.get(die) > 0 && die.getValue() == 6) {
                     return 0;
                 }
             }
             return 15;
+        }
+
+        if (category == Category.LARGESTRAIGHT) {
+
+            for (Die die : dieFrequency.keySet()) {
+                if (dieFrequency.get(die) != 1 && die.getValue() >= 2) {
+                    return 0;
+                }
+                if (dieFrequency.get(die) > 0 && die.getValue() == 1) {
+                    return 0;
+                }
+            }
+            return 20;
         }
 
         switch (category) {
