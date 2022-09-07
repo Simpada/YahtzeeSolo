@@ -1,9 +1,12 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class Player {
 
     private Die[] dice;
+
+    private String name = "";
 
     public Die[] getDice() {
         return dice;
@@ -13,11 +16,33 @@ public class Player {
         this.dice = dice;
     }
 
-    public Player(){}
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Player(){setDice(new Die[5]);}
 
     public Player(Die[] dice) {
         this.dice = dice;
     }
+
+
+    public void throwDice(int diceToRoll) {
+
+        Random random = new Random();
+        Die[] dice = getDice();
+
+        for (int i = 0; i < diceToRoll; i++) {
+
+            dice[i] = Die.values()[random.nextInt(Die.values().length)];
+
+        }
+    }
+
 
     public int getScore(Category category) {
 
@@ -118,7 +143,7 @@ public class Player {
             return result;
         }
 
-        return -1;
+        throw new RuntimeException("This should be unreachable, oh-no");
     }
 
     private int findSame(Map<Die, Integer> dieFrequency, int numOfKind) {
