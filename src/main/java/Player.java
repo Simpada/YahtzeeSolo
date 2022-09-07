@@ -3,7 +3,17 @@ import java.util.Map;
 
 public class Player {
 
-    private final Die[] dice;
+    private Die[] dice;
+
+    public Die[] getDice() {
+        return dice;
+    }
+
+    public void setDice(Die[] dice) {
+        this.dice = dice;
+    }
+
+    public Player(){}
 
     public Player(Die[] dice) {
         this.dice = dice;
