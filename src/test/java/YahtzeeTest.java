@@ -169,9 +169,20 @@ public class YahtzeeTest {
         });
 
         assertEquals(0, player.getScore(Category.FOURKIND));
+    }
 
+    @Test
+    public void testYahtzee() {
 
+        var player = new Player(new Die[]{
+                Die.SIX,
+                Die.SIX,
+                Die.SIX,
+                Die.SIX,
+                Die.SIX
+        });
 
+        assertEquals(30, player.getScore(Category.YAHTZEE));
     }
 
 
