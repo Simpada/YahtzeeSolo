@@ -124,6 +124,20 @@ public class YahtzeeTest {
         });
 
         assertEquals(12, player.getScore(Category.THREEKIND));
+
+        player = new Player(new Die[]{
+                Die.ONE,
+                Die.ONE,
+                Die.FOUR,
+                Die.FOUR,
+                Die.ONE
+        });
+
+        assertEquals(3, player.getScore(Category.THREEKIND));
+
     }
+
+
+
 
 }
