@@ -149,6 +149,29 @@ public class YahtzeeTest {
         });
 
         assertEquals(16, player.getScore(Category.FOURKIND));
+
+        player = new Player(new Die[]{
+                    Die.TWO,
+                    Die.TWO,
+                    Die.TWO,
+                    Die.TWO,
+                    Die.FOUR
+        });
+
+        assertEquals(8, player.getScore(Category.FOURKIND));
+
+        player = new Player(new Die[]{
+                    Die.TWO,
+                    Die.TWO,
+                    Die.ONE,
+                    Die.TWO,
+                    Die.FOUR
+        });
+
+        assertEquals(0, player.getScore(Category.FOURKIND));
+
+
+
     }
 
 

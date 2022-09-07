@@ -40,6 +40,11 @@ public class Player {
             return result;
         }
 
+        if (category == Category.FOURKIND){
+            result += findSame(dieFrequency, 4);
+            return result;
+        }
+
         switch (category) {
             case ONES -> {return dieFrequency.get(Die.ONE);}
             case TWOS -> {return dieFrequency.get(Die.TWO) * 2;}
