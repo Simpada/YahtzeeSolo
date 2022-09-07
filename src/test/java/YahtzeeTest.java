@@ -185,5 +185,17 @@ public class YahtzeeTest {
         assertEquals(30, player.getScore(Category.YAHTZEE));
     }
 
+    @Test
+    public void testFullHouse() {
+        var player = new Player(new Die[]{
+                Die.FOUR,
+                Die.ONE,
+                Die.FOUR,
+                Die.FOUR,
+                Die.ONE
+        });
+
+        assertEquals(14, player.getScore(Category.FULLHOUSE));
+    }
 
 }
