@@ -219,4 +219,30 @@ public class YahtzeeTest {
 
     }
 
+    @Test
+    public void testSmallStraight() {
+
+        var player = new Player(new Die[]{
+                Die.TWO,
+                Die.ONE,
+                Die.THREE,
+                Die.FIVE,
+                Die.FOUR
+        });
+
+        assertEquals(15, player.getScore(Category.SMALLSTRAIGHT));
+
+        player = new Player(new Die[]{
+                Die.FOUR,
+                Die.ONE,
+                Die.FOUR,
+                Die.FOUR,
+                Die.ONE
+        });
+
+        assertEquals(0, player.getScore(Category.SMALLSTRAIGHT));
+
+
+    }
+
 }

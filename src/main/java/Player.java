@@ -66,6 +66,8 @@ public class Player {
             return valueOne + valueTwo;
         }
 
+
+
         switch (category) {
             case ONES -> {return dieFrequency.get(Die.ONE);}
             case TWOS -> {return dieFrequency.get(Die.TWO) * 2;}
