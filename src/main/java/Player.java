@@ -35,6 +35,21 @@ public class Player {
             return result;
         }
 
+        if (category == Category.THREEKIND){
+            result += findSame(dieFrequency, 3);
+            return result;
+        }
+
+        if (category == Category.FOURKIND){
+            result += findSame(dieFrequency, 4);
+            return result;
+        }
+
+        if (category == Category.YAHTZEE){
+            result += findSame(dieFrequency, 5);
+            return result;
+        }
+
         switch (category) {
             case ONES -> {return dieFrequency.get(Die.ONE);}
             case TWOS -> {return dieFrequency.get(Die.TWO) * 2;}

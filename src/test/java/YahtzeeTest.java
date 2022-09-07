@@ -112,5 +112,78 @@ public class YahtzeeTest {
         assertEquals(10, player.getScore(Category.TWOPAIRS));
     }
 
+    @Test
+    public void testThreeOfKind () {
+
+        var player = new Player(new Die[]{
+                Die.FOUR,
+                Die.ONE,
+                Die.FOUR,
+                Die.FOUR,
+                Die.ONE
+        });
+
+        assertEquals(12, player.getScore(Category.THREEKIND));
+
+        player = new Player(new Die[]{
+                Die.ONE,
+                Die.ONE,
+                Die.FOUR,
+                Die.FOUR,
+                Die.ONE
+        });
+
+        assertEquals(3, player.getScore(Category.THREEKIND));
+
+    }
+
+    @Test
+    public void testFourOfKind() {
+
+        var player = new Player(new Die[]{
+                Die.FOUR,
+                Die.ONE,
+                Die.FOUR,
+                Die.FOUR,
+                Die.FOUR
+        });
+
+        assertEquals(16, player.getScore(Category.FOURKIND));
+
+        player = new Player(new Die[]{
+                    Die.TWO,
+                    Die.TWO,
+                    Die.TWO,
+                    Die.TWO,
+                    Die.FOUR
+        });
+
+        assertEquals(8, player.getScore(Category.FOURKIND));
+
+        player = new Player(new Die[]{
+                    Die.TWO,
+                    Die.TWO,
+                    Die.ONE,
+                    Die.TWO,
+                    Die.FOUR
+        });
+
+        assertEquals(0, player.getScore(Category.FOURKIND));
+    }
+
+    @Test
+    public void testYahtzee() {
+
+        var player = new Player(new Die[]{
+                Die.SIX,
+                Die.SIX,
+                Die.SIX,
+                Die.SIX,
+                Die.SIX
+        });
+
+        assertEquals(30, player.getScore(Category.YAHTZEE));
+    }
+
 
 }
