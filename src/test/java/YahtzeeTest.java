@@ -112,5 +112,18 @@ public class YahtzeeTest {
         assertEquals(10, player.getScore(Category.TWOPAIRS));
     }
 
+    @Test
+    public void testThreeOfKind () {
+
+        var player = new Player(new Die[]{
+                Die.FOUR,
+                Die.ONE,
+                Die.FOUR,
+                Die.FOUR,
+                Die.ONE
+        });
+
+        assertEquals(12, player.getScore(Category.THREEKIND));
+    }
 
 }
