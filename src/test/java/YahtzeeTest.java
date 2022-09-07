@@ -137,7 +137,19 @@ public class YahtzeeTest {
 
     }
 
+    @Test
+    public void testFourOfKind() {
 
+        var player = new Player(new Die[]{
+                Die.FOUR,
+                Die.ONE,
+                Die.FOUR,
+                Die.FOUR,
+                Die.FOUR
+        });
+
+        assertEquals(16, player.getScore(Category.FOURKIND));
+    }
 
 
 }
