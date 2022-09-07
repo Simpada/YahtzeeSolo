@@ -242,6 +242,16 @@ public class YahtzeeTest {
 
         assertEquals(0, player.getScore(Category.SMALLSTRAIGHT));
 
+        player = new Player(new Die[]{
+                Die.TWO,
+                Die.ONE,
+                Die.THREE,
+                Die.FOUR,
+                Die.SIX
+        });
+
+        assertEquals(0, player.getScore(Category.SMALLSTRAIGHT));
+
 
     }
 

@@ -66,7 +66,18 @@ public class Player {
             return valueOne + valueTwo;
         }
 
+        if (category == Category.SMALLSTRAIGHT) {
 
+            for (Die die : dieFrequency.keySet()) {
+                if (dieFrequency.get(die) != 1 && die.getValue() <= 5) {
+                    return 0;
+                }
+                if (dieFrequency.get(die) > 1 && die.getValue() == 6) {
+                    return 0;
+                }
+            }
+            return 15;
+        }
 
         switch (category) {
             case ONES -> {return dieFrequency.get(Die.ONE);}
