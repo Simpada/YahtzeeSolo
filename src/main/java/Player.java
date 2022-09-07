@@ -47,7 +47,23 @@ public class Player {
 
         if (category == Category.YAHTZEE){
             result += findSame(dieFrequency, 5);
-            return result;
+            if (result != 0) {
+                return 50;
+            } else {
+                return 0;
+            }
+        }
+
+        if (category == Category.FULLHOUSE) {
+
+            int valueOne = findSame(dieFrequency, 3);
+
+            int valueTwo = findSame(dieFrequency, 2);
+
+            if ( valueOne/3 == valueTwo/2 || valueOne == 0 || valueTwo == 0) {
+                return 0;
+            }
+            return valueOne + valueTwo;
         }
 
         switch (category) {

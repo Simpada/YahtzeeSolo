@@ -182,7 +182,7 @@ public class YahtzeeTest {
                 Die.SIX
         });
 
-        assertEquals(30, player.getScore(Category.YAHTZEE));
+        assertEquals(50, player.getScore(Category.YAHTZEE));
     }
 
     @Test
@@ -196,6 +196,27 @@ public class YahtzeeTest {
         });
 
         assertEquals(14, player.getScore(Category.FULLHOUSE));
+
+        player = new Player(new Die[]{
+                Die.FOUR,
+                Die.FOUR,
+                Die.FOUR,
+                Die.FOUR,
+                Die.FOUR
+        });
+
+        assertEquals(0, player.getScore(Category.FULLHOUSE));
+
+        player = new Player(new Die[]{
+                Die.FOUR,
+                Die.FOUR,
+                Die.ONE,
+                Die.TWO,
+                Die.FOUR
+        });
+
+        assertEquals(0, player.getScore(Category.FULLHOUSE));
+
     }
 
 }
