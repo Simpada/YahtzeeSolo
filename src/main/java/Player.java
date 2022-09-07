@@ -25,11 +25,13 @@ public class Player {
         int result = 0;
 
         if (category == Category.ONEPAIR) {
-            for (Die dieValue : dieFrequency.keySet()) {
-                if (dieFrequency.get(dieValue) >= 2 && result < dieValue.getValue() * 2) {
-                    result = dieValue.getValue() * 2;
-                }
-            }
+            result += findSame(dieFrequency, 2);
+            return result;
+        }
+
+        if (category == Category.TWOPAIRS) {
+            result += findSame(dieFrequency, 2);
+            result += findSame(dieFrequency, 2);
             return result;
         }
 
@@ -50,5 +52,20 @@ public class Player {
         }
 
         return -1;
+    }
+
+    private int findSame(Map<Die, Integer> dieFrequency, int numOfKind) {
+        int result = 0;
+        Die largestDie = null;
+        for (Die dieValue : dieFrequency.keySet()) {
+            if (dieFrequency.get(dieValue) >= numOfKind && result < dieValue.getValue()) {
+                result = dieValue.getValue();
+                largestDie = dieValue;
+            }
+        }
+        if (largestDie != null) {
+            dieFrequency.put(largestDie, dieFrequency.get(largestDie) - numOfKind);
+        }
+        return result * numOfKind;
     }
 }

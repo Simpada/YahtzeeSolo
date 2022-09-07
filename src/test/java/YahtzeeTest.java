@@ -101,6 +101,15 @@ public class YahtzeeTest {
 
         assertEquals(16, player.getScore(Category.TWOPAIRS));
 
+        player = new Player(new Die[]{
+                Die.FOUR,
+                Die.ONE,
+                Die.FOUR,
+                Die.FIVE,
+                Die.ONE
+        });
+
+        assertEquals(10, player.getScore(Category.TWOPAIRS));
     }
 
 
