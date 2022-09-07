@@ -86,7 +86,31 @@ public class YahtzeeTest {
         });
 
         assertEquals(12, player.getScore(Category.ONEPAIR));
-
     }
+
+    @Test
+    void testTwoPairs() {
+
+        var player = new Player(new Die[]{
+                Die.ONE,
+                Die.TWO,
+                Die.SIX,
+                Die.SIX,
+                Die.TWO
+        });
+
+        assertEquals(16, player.getScore(Category.TWOPAIRS));
+
+        player = new Player(new Die[]{
+                Die.FOUR,
+                Die.ONE,
+                Die.FOUR,
+                Die.FIVE,
+                Die.ONE
+        });
+
+        assertEquals(10, player.getScore(Category.TWOPAIRS));
+    }
+
 
 }
